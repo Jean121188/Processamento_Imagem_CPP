@@ -48,12 +48,23 @@ int main(int argc, char **argv){
     // diff.write("img/diff.png");
 
     // Exemplo 07 - diff_scale (mistura duas imagens)
-    Image test1("img/sky.jpg");
-    Image test2("img/praia.jpg");
+    // Image test1("img/sky.jpg");
+    // Image test2("img/praia.jpg");
 
-    Image diff = test1;
-    diff.diffmap_scale(test2);
-    diff.write("img/diff.png");
-    
+    // Image diff = test1;
+    // diff.diffmap_scale(test2);
+    // diff.write("img/diff.png");
+
+    //Exemplo 08 - flipX (espelha a imagem no eixo X)
+    // Image test("img/praia.jpg");
+    // Image flip = test;
+    // flip.flipX();
+    // flip.write("img/flip_praia.jpg");
+
+    //Exemplo 09 - flipY (espelha a imagem no eixo Y)
+    Image test("img/praia.jpg");
+    Image flip = test;
+    flip.flipY();
+    flip.write("img/flipy_praia.jpg");
     return 0;
 }
