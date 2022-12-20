@@ -62,9 +62,48 @@ int main(int argc, char **argv){
     // flip.write("img/flip_praia.jpg");
 
     //Exemplo 09 - flipY (espelha a imagem no eixo Y)
-    Image test("img/praia.jpg");
-    Image flip = test;
-    flip.flipY();
-    flip.write("img/flipy_praia.jpg");
+    // Image test("img/praia.jpg");
+    // Image flip = test;
+    // flip.flipY();
+    // flip.write("img/flipy_praia.jpg");
+
+    //Exemplo 10 - Otsu
+    // Image test("img/sky.jpg");
+    // Image texto = test;
+    // texto.grayscale_avg();
+    // texto.Otsu();
+    // texto.write("img/sky_OTSU.jpg");
+
+    // Testes com ROIS
+    Image test1("img/hid.jpg");
+    test1.crop(402,127,36,50);
+    test1.grayscale_avg();
+    test1.Binary();
+    test1.write("img/ROI1.jpg");
+
+    Image test2("img/hid.jpg");
+    test2.crop(356,127,36,50);
+    test2.grayscale_avg();
+    test2.Binary();
+    test2.write("img/ROI2.jpg");
+
+    Image test3("img/hid.jpg");
+    test3.crop(306,127,36,50);
+    test3.grayscale_avg();
+    test3.Binary();
+    test3.write("img/ROI3.jpg");
+
+    Image test4("img/hid.jpg");
+    test4.crop(255,127,36,50);
+    test4.grayscale_avg();
+    test4.Binary();
+    test4.write("img/ROI4.jpg");
+
+    Image test5("img/hid.jpg");
+    test5.crop(209,127,36,50);
+    test5.grayscale_avg();
+    test5.Binary();
+    test5.write("img/ROI5.jpg");
+
     return 0;
 }

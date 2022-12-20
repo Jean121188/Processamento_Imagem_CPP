@@ -35,6 +35,9 @@ struct Image{
 
     Image& flipX();
     Image& flipY();
+
+    // Save in archive
+    Image& Binary(void);
 };
 
 #endif

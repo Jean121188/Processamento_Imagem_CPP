@@ -75,9 +75,8 @@ ImageType Image::getFileType(const char* filename){
         if(strcmp(ext, ".tga") == 0){
             return TGA;
         }
-    }else{
-        return PNG;
     }
+    return PNG;
 }
 
 Image& Image::grayscale_avg(){
@@ -203,5 +202,23 @@ Image& Image::flipY(){
             memcpy(px2, tmp, channels);
         }
     }
+    return *this;
+}
+
+Image& Image::Binary(void){
+
+    printf("w: %i\n", this->w); // w = 1024 (largura)
+    printf("h: %i\n", this->h); // h = 768 (altura)
+    size_t N = this->w * this->h * this->channels;
+    // printf("N: %lu \n", N);
+    for(int i = 0; i < N; ++i){
+        if(this->data[i] > 127){
+            this->data[i] = 255;
+        }else{
+            this->data[i] = 0;
+        }
+    }
+    
+    printf("Finish... \n");
     return *this;
 }

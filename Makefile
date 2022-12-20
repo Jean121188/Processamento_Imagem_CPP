@@ -5,14 +5,14 @@ INCLUDE	= ./include
 OBJ		= ./obj
 SRC		= ./src
 
-all: build compile
+all: build compile run
 	
 build:
 	g++ -c $(SRC)/image.cpp -I $(INCLUDE) -o $(OBJ)/image.o -lm
 
 compile:
 	g++ $(APP)/app.cpp $(OBJ)/*.o -I $(INCLUDE) -o $(BIN)/app -lm
-
+	
 run:
 	$(BIN)/app
 
